@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidTest.DNA"
+             Title="DNA">
+    <VerticalStackLayout>
+        <Label 
+            Text="Здесь будет проект!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Editor x:Name="DNA_editor"/>
+        <Label
+            x:Name="DNA_Show_Result"/>
+        <Label
+            x:Name="RNA_Show_Result"/>
+        <Button 
+            x:Name="DNA_convert"
+            Clicked="DNA_convert_Clicked" 
+            Text="Преобразовать"
+            />
+    </VerticalStackLayout>
+</ContentPage>
