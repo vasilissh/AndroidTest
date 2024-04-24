@@ -3,20 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AndroidTest.DNA"
              Title="DNA">
-    <VerticalStackLayout>
+    <VerticalStackLayout AutomationProperties.IsInAccessibleTree="False">
         <Label 
             Text="Здесь будет проект!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Editor x:Name="DNA_editor"/>
+        <Editor 
+            x:Name="DNA_editor"
+            TextChanged="DNA_editor_TextChanged"/>
         <Label
             x:Name="DNA_Show_Result"/>
         <Label
             x:Name="RNA_Show_Result"/>
-        <Button 
-            x:Name="DNA_convert"
-            Clicked="DNA_convert_Clicked" 
-            Text="Преобразовать"
-            />
+        <Label
+            x:Name="Protein_Label"/>
+        <HorizontalStackLayout>
+            <CheckBox
+                x:Name="Full_Named"
+                IsChecked="True"
+                CheckedChanged="Full_Named_CheckedChanged"
+                />
+            <Label Text="Полные назвния аминокислот"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

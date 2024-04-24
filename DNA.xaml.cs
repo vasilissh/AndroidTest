@@ -3,6 +3,7 @@ namespace AndroidTest;
 public partial class DNA : ContentPage
 {
 	Dictionary<string, string> RNAConvert = new Dictionary<string, string>();
+	Dictionary<string, string> RNAConvertFull = new Dictionary<string, string>();
 	
 	public DNA()
 	{
@@ -35,6 +36,10 @@ public partial class DNA : ContentPage
 		RNAConvert.Add("ЦАЦ", "Гис");
 		RNAConvert.Add("ЦАА", "Глн");
 		RNAConvert.Add("ЦАГ", "Глн");
+		RNAConvert.Add("ЦГУ", "Арг");
+		RNAConvert.Add("ЦГЦ", "Арг");
+		RNAConvert.Add("ЦГА", "Арг");
+		RNAConvert.Add("ЦГГ", "Арг");
 		RNAConvert.Add("АУУ", "Иле");
 		RNAConvert.Add("АУЦ", "Иле");
 		RNAConvert.Add("АУА", "Иле");
@@ -68,114 +73,172 @@ public partial class DNA : ContentPage
 		RNAConvert.Add("ГГА", "Гли");
 		RNAConvert.Add("ГГГ", "Гли");
 
-        RNAConvert.Add("УУУ", "Фенилаланин");
-        RNAConvert.Add("УУЦ", "Фенилаланин");
-        RNAConvert.Add("УУА", "Лейцин");
-        RNAConvert.Add("УУГ", "Лейцин");
-        RNAConvert.Add("УЦУ", "Серин");
-        RNAConvert.Add("УЦЦ", "Серин");
-        RNAConvert.Add("УЦА", "Серин");
-        RNAConvert.Add("УЦГ", "Серин");
-        RNAConvert.Add("УАУ", "Тирозин");
-        RNAConvert.Add("УАЦ", "Тирозин");
-        RNAConvert.Add("УАА", "СТОП");
-        RNAConvert.Add("УАГ", "СТОП");
-        RNAConvert.Add("УГУ", "Цистеин");
-        RNAConvert.Add("УГЦ", "Цистеин");
-        RNAConvert.Add("УГА", "СТОП");
-        RNAConvert.Add("УГГ", "Триптофан");
-        RNAConvert.Add("ЦУУ", "Лейцин");
-        RNAConvert.Add("ЦУЦ", "Лейцин");
-        RNAConvert.Add("ЦУА", "Лейцин");
-        RNAConvert.Add("ЦУГ", "Лейцин");
-        RNAConvert.Add("ЦЦУ", "Пролин");
-        RNAConvert.Add("ЦЦЦ", "Пролин");
-        RNAConvert.Add("ЦЦА", "Пролин");
-        RNAConvert.Add("ЦЦГ", "Пролин");
-        RNAConvert.Add("ЦАУ", "Гистидин");
-        RNAConvert.Add("ЦАЦ", "Гистидин");
-        RNAConvert.Add("ЦАА", "Глутамин");
-        RNAConvert.Add("ЦАГ", "Глутамин");
-        RNAConvert.Add("АУУ", "Изолейцин");
-        RNAConvert.Add("АУЦ", "Изолейцин");
-        RNAConvert.Add("АУА", "Изолейцин");
-        RNAConvert.Add("АУГ", "Метионин");
-        RNAConvert.Add("АЦУ", "Треонин");
-        RNAConvert.Add("АЦЦ", "Треонин");
-        RNAConvert.Add("АЦА", "Треонин");
-        RNAConvert.Add("АЦГ", "Треонин");
-        RNAConvert.Add("ААУ", "Аспарагин");
-        RNAConvert.Add("ААЦ", "Аспарагин");
-        RNAConvert.Add("ААА", "Лизин");
-        RNAConvert.Add("ААГ", "Лизин");
-        RNAConvert.Add("АГУ", "Серин");
-        RNAConvert.Add("АГЦ", "Серин");
-        RNAConvert.Add("АГА", "Аргинин");
-        RNAConvert.Add("АГГ", "Аргинин");
-        RNAConvert.Add("ГУУ", "Валин");
-        RNAConvert.Add("ГУЦ", "Валин");
-        RNAConvert.Add("ГУА", "Валин");
-        RNAConvert.Add("ГУГ", "Валин");
-        RNAConvert.Add("ГЦУ", "Аланин");
-        RNAConvert.Add("ГЦЦ", "Аланин");
-        RNAConvert.Add("ГЦА", "Аланин");
-        RNAConvert.Add("ГЦГ", "Аланин");
-        RNAConvert.Add("ГАУ", "Аспарагиновая кислота");
-        RNAConvert.Add("ГАЦ", "Аспарагиновая кислота");
-        RNAConvert.Add("ГАА", "Глутаминовая кислота");
-        RNAConvert.Add("ГАГ", "Глутаминовая кислота");
-        RNAConvert.Add("ГГУ", "Глицин");
-        RNAConvert.Add("ГГЦ", "Глицин");
-        RNAConvert.Add("ГГА", "Глицин");
-        RNAConvert.Add("ГГГ", "Глицин");
+        RNAConvertFull.Add("УУУ", "Фенилаланин");
+        RNAConvertFull.Add("УУЦ", "Фенилаланин");
+        RNAConvertFull.Add("УУА", "Лейцин");
+        RNAConvertFull.Add("УУГ", "Лейцин");
+        RNAConvertFull.Add("УЦУ", "Серин");
+        RNAConvertFull.Add("УЦЦ", "Серин");
+        RNAConvertFull.Add("УЦА", "Серин");
+        RNAConvertFull.Add("УЦГ", "Серин");
+        RNAConvertFull.Add("УАУ", "Тирозин");
+        RNAConvertFull.Add("УАЦ", "Тирозин");
+        RNAConvertFull.Add("УАА", "СТОП");
+        RNAConvertFull.Add("УАГ", "СТОП");
+        RNAConvertFull.Add("УГУ", "Цистеин");
+        RNAConvertFull.Add("УГЦ", "Цистеин");
+        RNAConvertFull.Add("УГА", "СТОП");
+        RNAConvertFull.Add("УГГ", "Триптофан");
+        RNAConvertFull.Add("ЦУУ", "Лейцин");
+        RNAConvertFull.Add("ЦУЦ", "Лейцин");
+        RNAConvertFull.Add("ЦУА", "Лейцин");
+        RNAConvertFull.Add("ЦУГ", "Лейцин");
+        RNAConvertFull.Add("ЦЦУ", "Пролин");
+        RNAConvertFull.Add("ЦЦЦ", "Пролин");
+        RNAConvertFull.Add("ЦЦА", "Пролин");
+        RNAConvertFull.Add("ЦЦГ", "Пролин");
+        RNAConvertFull.Add("ЦАУ", "Гистидин");
+        RNAConvertFull.Add("ЦАЦ", "Гистидин");
+        RNAConvertFull.Add("ЦАА", "Глутамин");
+        RNAConvertFull.Add("ЦАГ", "Глутамин");
+        RNAConvertFull.Add("ЦГУ", "Аргинин");
+        RNAConvertFull.Add("ЦГЦ", "Аргинин");
+        RNAConvertFull.Add("ЦГА", "Аргинин");
+        RNAConvertFull.Add("ЦГГ", "Аргинин");
+        RNAConvertFull.Add("АУУ", "Изолейцин");
+        RNAConvertFull.Add("АУЦ", "Изолейцин");
+        RNAConvertFull.Add("АУА", "Изолейцин");
+        RNAConvertFull.Add("АУГ", "Метионин");
+        RNAConvertFull.Add("АЦУ", "Треонин");
+        RNAConvertFull.Add("АЦЦ", "Треонин");
+        RNAConvertFull.Add("АЦА", "Треонин");
+        RNAConvertFull.Add("АЦГ", "Треонин");
+        RNAConvertFull.Add("ААУ", "Аспарагин");
+        RNAConvertFull.Add("ААЦ", "Аспарагин");
+        RNAConvertFull.Add("ААА", "Лизин");
+        RNAConvertFull.Add("ААГ", "Лизин");
+        RNAConvertFull.Add("АГУ", "Серин");
+        RNAConvertFull.Add("АГЦ", "Серин");
+        RNAConvertFull.Add("АГА", "Аргинин");
+        RNAConvertFull.Add("АГГ", "Аргинин");
+        RNAConvertFull.Add("ГУУ", "Валин");
+        RNAConvertFull.Add("ГУЦ", "Валин");
+        RNAConvertFull.Add("ГУА", "Валин");
+        RNAConvertFull.Add("ГУГ", "Валин");
+        RNAConvertFull.Add("ГЦУ", "Аланин");
+        RNAConvertFull.Add("ГЦЦ", "Аланин");
+        RNAConvertFull.Add("ГЦА", "Аланин");
+        RNAConvertFull.Add("ГЦГ", "Аланин");
+        RNAConvertFull.Add("ГАУ", "Аспарагиновая кислота");
+        RNAConvertFull.Add("ГАЦ", "Аспарагиновая кислота");
+        RNAConvertFull.Add("ГАА", "Глутаминовая кислота");
+        RNAConvertFull.Add("ГАГ", "Глутаминовая кислота");
+        RNAConvertFull.Add("ГГУ", "Глицин");
+        RNAConvertFull.Add("ГГЦ", "Глицин");
+        RNAConvertFull.Add("ГГА", "Глицин");
+        RNAConvertFull.Add("ГГГ", "Глицин");
 
 
     }
 
-    private void DNA_convert_Clicked(object sender, EventArgs e)
+   
+    /// <summary>
+    /// Преобразование ДНК и иРНК + выдача названия аминокислот
+    /// </summary>
+
+    private void Full_Convert()
     {
-		string DNAReverse = "";
-		foreach (char C in DNA_editor.Text.ToUpper()) 
-		{ 
-			switch (C) 
-			{
-				case 'А':
-					DNAReverse += 'Т';
-					break;
-				case 'Г':
-					DNAReverse += 'Ц';
-					break;
-				case 'Т':
-					DNAReverse += 'А';
-					break;
-				case 'Ц':
-					DNAReverse += 'Г';
-					break;
-			}
-		}
+        string DNAReverse = "";
+        foreach (char C in DNA_editor.Text.ToUpper())
+        {
+            switch (C)
+            {
+                case 'А':
+                    DNAReverse += 'Т';
+                    break;
+                case 'Г':
+                    DNAReverse += 'Ц';
+                    break;
+                case 'Т':
+                    DNAReverse += 'А';
+                    break;
+                case 'Ц':
+                    DNAReverse += 'Г';
+                    break;
+            }
+        }
 
-		DNA_Show_Result.Text = DNAReverse;
+        DNA_Show_Result.Text = DNAReverse;
 
-		string RNA = "";
-		foreach (char D in DNAReverse) 
-		{
-		 switch(D)
-			{
-				case 'А':
-					RNA += 'У';
-					break;
-				case 'Г':
-					RNA += 'Ц';
-					break;
-				case 'Т':
-					RNA += 'А';
-					break;
-				case 'Ц':
-					RNA += 'Г';
-					break;
-			}
-		}
+        string RNA = "";
+        foreach (char D in DNAReverse)
+        {
+            switch (D)
+            {
+                case 'А':
+                    RNA += 'У';
+                    break;
+                case 'Г':
+                    RNA += 'Ц';
+                    break;
+                case 'Т':
+                    RNA += 'А';
+                    break;
+                case 'Ц':
+                    RNA += 'Г';
+                    break;
+            }
+        }
 
-		RNA_Show_Result.Text = RNA;
+        RNA_Show_Result.Text = RNA;
+
+        Protein_Label.Text = RNAToProtein(RNA);
+        int StartCodon = RNA.IndexOf("xxx");
+    }
+
+    /// <summary>
+    /// Превращает Рнк в названия Аминокислот
+    /// </summary>
+    /// <param name="RNA">Входной РНК код</param>
+    /// <returns></returns>
+    private string RNAToProtein(string RNA)
+    {
+        int Start = FindStartCodon(RNA); 
+        if( Start == -1 ) { return ""; };
+        
+        string Protein = "";
+        for (int i = Start; i < RNA.Count(); i += 3)
+        {
+            if (i + 3 >= RNA.Count()) break;
+            string Triplet = RNA.Substring(i, 3);
+            Protein += Full_Named.IsChecked
+                ? RNAConvertFull[Triplet] + " "
+                : RNAConvert[Triplet] + " ";
+
+        }
+
+        return Protein;
+    }
+
+    /// <summary>
+    /// Осуществляет поиск старт кодона
+    /// </summary>
+    /// <param name="RNA">Входной РНК код</param>
+    /// <returns></returns>
+
+    private int FindStartCodon(string RNA)
+    {
+        if (!RNA.Contains("АУГ")) return -1;
+        return RNA.IndexOf("АУГ");
+    }
+
+    private void DNA_editor_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        Full_Convert();
+    }
+
+    private void Full_Named_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        Full_Convert();
     }
 }
